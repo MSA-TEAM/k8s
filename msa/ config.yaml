@@ -1,0 +1,42 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: msa-config
+  labels:
+    app: config-service
+    visualize: "true"
+spec:
+  selector:
+    app: msa-config
+  ports:
+  - protocol: TCP
+    port: 8888
+    targetPort: 8888
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: config-service
+  labels:
+    app: config-service
+    visualize: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-service
+  template:
+    metadata:
+      labels:
+        app: config-service
+        version: "latest"
+        visualize: "true"
+      annotations:
+        visualizer/uses: mysql
+    spec:
+      containers:
+      - name: guestbook-service
+        image: docker.gsp.sicc.co.kr:5000/config:1.0.0-RELEASE
+        ports:
+        - name: http
+          containerPort: 8888
