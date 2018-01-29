@@ -4,7 +4,7 @@ metadata:
   name: msa-config
 spec:
   containers:
-  - name: cfg
-    image: docker.gsp.sicc.co.kr:5000/cfg:1.0.0-RELEASE
+    - name: cfg
+      image: docker.gsp.sicc.co.kr:5000/cfg:1.0.0-RELEASE
   imagePullSecrets:
-  - name: regsecret
+    - name: regsecret
