@@ -1,4 +1,4 @@
-kind: Service
+/* kind: Service
 apiVersion: v1
 metadata:
   name: msa-config
@@ -39,4 +39,4 @@ spec:
         image: docker.gsp.sicc.co.kr:5000/config:1.0.0-RELEASE
         ports:
         - name: http
-          containerPort: 8888
+          containerPort: 8888 */
