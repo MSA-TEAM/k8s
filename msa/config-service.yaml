@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
     - name: cfg
-      image: docker.gsp.sicc.co.kr:5000/cfg:1.0.0-RELEASE
+      image: docker.gsp.sicc.co.kr/cfg:1.0.0-RELEASE
   imagePullSecrets:
     - name: regsecret
