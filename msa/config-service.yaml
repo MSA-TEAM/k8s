@@ -6,3 +6,15 @@ spec:
   containers:
     - name: cfg
       image: docker.gsp.sicc.co.kr/cfg:1.0.0-RELEASE
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: msa-config-service
+spec:
+  selector:
+    app: msa-config
+  ports:
+  - protocol: TCP
+    port: 8888
+    targetPort: 8888
