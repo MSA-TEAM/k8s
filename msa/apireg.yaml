@@ -13,23 +13,23 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: apireg-service
+  name: msa-apireg
   labels:
-    app: apireg-service
+    app: msa-apireg
     visualize: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: apireg-service
+      app: msa-apireg
   template:
     metadata:
       labels:
-        app: apireg-service
+        app: msa-apireg
         version: "1.0.0-RELEASE"     
     spec:
       containers:
-      - name: msa-apireg-service
+      - name: msa-apireg
         image: docker.gsp.sicc.co.kr/apireg:1.0.0-RELEASE
         ports:
         - name: http
