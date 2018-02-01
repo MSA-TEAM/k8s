@@ -1,36 +1,36 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: msa-config-service
+  name: msa-apireg-service
 spec:
   selector:
-    app: msa-config
+    app: msa-apireg
   ports:
   - protocol: TCP
-    port: 8888
-    targetPort: 8888
+    port: 8761
+    targetPort: 8761
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: config-service
+  name: apireg-service
   labels:
-    app: config-service
+    app: apireg-service
     visualize: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config-service
+      app: apireg-service
   template:
     metadata:
       labels:
-        app: config-service
+        app: apireg-service
         version: "1.0.0-RELEASE"     
     spec:
       containers:
-      - name: msa-config-service
-        image: docker.gsp.sicc.co.kr/cfg:1.0.0-RELEASE
+      - name: msa-apireg-service
+        image: docker.gsp.sicc.co.kr/apireg:1.0.0-RELEASE
         ports:
         - name: http
-          containerPort: 8888
+          containerPort: 8761
