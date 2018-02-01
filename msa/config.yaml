@@ -13,23 +13,23 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: config-service
+  name: msa-config
   labels:
-    app: config-service
+    app: msa-config
     visualize: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config-service
+      app: msa-config
   template:
     metadata:
       labels:
-        app: config-service
+        app: msa-config
         version: "1.0.0-RELEASE"     
     spec:
       containers:
-      - name: msa-config-service
+      - name: msa-config
         image: docker.gsp.sicc.co.kr/cfg:1.0.0-RELEASE
         ports:
         - name: http
