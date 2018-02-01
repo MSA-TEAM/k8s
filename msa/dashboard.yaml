@@ -28,11 +28,11 @@ spec:
     metadata:
       labels:
         app: msa-dashboard
-        version: "1.0.0-RELEASE"     
+        version: "1.0.1-RELEASE"     
     spec:
       containers:
       - name: msa-dashboard
-        image: docker.gsp.sicc.co.kr/dashboard:1.0.0-RELEASE
+        image: docker.gsp.sicc.co.kr/dashboard:1.0.1-RELEASE
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: prd
