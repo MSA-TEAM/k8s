@@ -12,3 +12,10 @@ aws s3api put-bucket-versioning --bucket gsp.sicc.co.kr --versioning-configurati
 
 ID=$(uuidgen) && aws route53 create-hosted-zone --name gsp.sicc.co.kr --caller-reference $ID | jq .DelegationSet.NameServers
 
+
+# certbot
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+
+
+sudo certbot renew --dry-run
