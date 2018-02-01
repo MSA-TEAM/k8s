@@ -36,6 +36,10 @@ spec:
           value: prd
         - name: spring.cloud.config.uri
           value: http://100.70.69.238:8888
+        - name: eureka.datacenter
+          value: GSP Cluster
+        - name: eureka.environment
+          value: Development Environment
         ports:
         - name: http
           containerPort: 8761
