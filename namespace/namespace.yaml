@@ -8,13 +8,6 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: development
-    labels:
-    - name: development
----
-apiVersion: v1
-kind: Namespace
-metadata:
   name: production
     labels:
     - name: production
